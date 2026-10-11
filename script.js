@@ -253,39 +253,15 @@
   var cdTimer = setInterval(tickCountdown, 1000);
   tickCountdown();
 
-  /* ================= Add to Calendar (.ics) ================= */
-  document.getElementById("calBtn").addEventListener("click", function () {
-    var stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-    var ics = [
-      "BEGIN:VCALENDAR",
-      "VERSION:2.0",
-      "PRODID:-//Ghosh Family//Wedding Reception//EN",
-      "CALSCALE:GREGORIAN",
-      "METHOD:PUBLISH",
-      "BEGIN:VEVENT",
-      "UID:sayon-gabrielle-reception-20261227@ghoshfamily",
-      "DTSTAMP:" + stamp,
-      "DTSTART:20261227T123000Z", // 18:00 IST
-      "DTEND:20261227T163000Z",   // 22:00 IST
-      "SUMMARY:Wedding Reception — Sayon & Gabrielle",
-      "LOCATION:Barokuthi Rajbari\\, 64/B\\, Khudiram Bose Sarani\\, Near SBI Bank\\, Milk Colony\\, Belgachia\\, Kolkata – 700037",
-      "DESCRIPTION:Wedding Reception (Bou Bhaat) of Sayon & Gabrielle Ghosh. 6:00 PM onwards.\\nDirections: https://www.google.com/maps/search/?api=1&query=Barokuthi+Rajbari+Belgachia+Kolkata\\nContact: 9903912505 / 9007939890",
-      "BEGIN:VALARM",
-      "TRIGGER:-PT3H",
-      "ACTION:DISPLAY",
-      "DESCRIPTION:Sayon & Gabrielle's Wedding Reception this evening",
-      "END:VALARM",
-      "END:VEVENT",
-      "END:VCALENDAR"
-    ].join("\r\n");
-    var blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = url;
-    a.download = "Sayon-Gabrielle-Reception.ics";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
-  });
+  /* ================= Add to Calendar =================
+     iPhone/iPad: hosted reception.ics opens Apple's "Add to Calendar" sheet.
+     Everyone else: Google Calendar link opens the app/site with the event pre-filled. */
+  var isApple = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  if (isApple) {
+    var cal = document.getElementById("calBtn");
+    cal.href = "reception.ics";
+    cal.removeAttribute("target");
+    document.getElementById("calAlt").hidden = true;
+  }
 })();

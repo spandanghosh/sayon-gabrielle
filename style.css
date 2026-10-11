@@ -354,3 +354,7 @@ address { font-style: normal; font-size: 15px; color: var(--text-soft); line-hei
   .reveal { opacity: 1; transform: none; }
   .petals { display: none; }
 }
+
+.cal-alt { margin: 14px 0 0; font-size: 13px; color: var(--text-soft); }
+.cal-alt[hidden] { display: none; }
+.cal-alt a { color: var(--gold-deep); font-weight: 700; }

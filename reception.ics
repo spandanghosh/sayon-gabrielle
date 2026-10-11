@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ghosh Family//Wedding Reception//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:sayon-gabrielle-reception-20261227@ghoshfamily
+DTSTAMP:20261012T000000Z
+DTSTART:20261227T123000Z
+DTEND:20261227T163000Z
+SUMMARY:Wedding Reception — Sayon & Gabrielle
+LOCATION:Barokuthi Rajbari\, 64/B\, Khudiram Bose Sarani\, Near SBI Bank\, Milk Colony\, Belgachia\, Kolkata 700037
+DESCRIPTION:Wedding Reception (Bou Bhaat) of Sayon & Gabrielle Ghosh\, 6:00 PM onwards.\nDirections: https://www.google.com/maps/search/?api=1&query=Barokuthi+Rajbari+Belgachia+Kolkata\nContact: 9903912505 / 9007939890
+BEGIN:VALARM
+TRIGGER:-PT3H
+ACTION:DISPLAY
+DESCRIPTION:Sayon & Gabrielle's Wedding Reception this evening
+END:VALARM
+END:VEVENT
+END:VCALENDAR
