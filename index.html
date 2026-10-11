@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500&display=swap&text=%E0%A6%B6%E0%A7%81%E0%A6%AD%20%E0%A6%AC%E0%A6%BF%E0%A6%AC%E0%A6%BE%E0%A6%B9" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@500&display=swap&text=%E0%A6%B6%E0%A7%81%E0%A6%AD%20%E0%A6%AC%E0%A7%8C%E0%A6%AD%E0%A6%BE%E0%A6%A4" rel="stylesheet">
   <link rel="preload" as="image" href="photo1.webp" type="image/webp">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -66,6 +66,22 @@
         <path d="M30 76c-12 0-16-12-13-22 4-12 18-14 23-22 3 10 2 22-1 30-2 8-3 14-9 14z" fill="#F3D9C9" stroke="#B8893B" stroke-width="1"/>
         <circle cx="28" cy="58" r="5" fill="#E8A0A0"/>
       </symbol>
+      <symbol id="alpana" viewBox="0 0 200 200">
+        <g fill="none" stroke="#B8893B" stroke-width="1.3">
+          <circle cx="100" cy="100" r="14"/><circle cx="100" cy="100" r="5" fill="#E8A0A0" stroke="none"/>
+          <g id="alp-petals">
+            <path d="M100 86c-8-14-8-30 0-44 8 14 8 30 0 44z"/>
+            <path d="M100 78c-3-8-3-18 0-26 3 8 3 18 0 26z" stroke="#E8A0A0"/>
+          </g>
+          <use href="#alp-petals" transform="rotate(45 100 100)"/><use href="#alp-petals" transform="rotate(90 100 100)"/>
+          <use href="#alp-petals" transform="rotate(135 100 100)"/><use href="#alp-petals" transform="rotate(180 100 100)"/>
+          <use href="#alp-petals" transform="rotate(225 100 100)"/><use href="#alp-petals" transform="rotate(270 100 100)"/>
+          <use href="#alp-petals" transform="rotate(315 100 100)"/>
+          <circle cx="100" cy="100" r="66" stroke-dasharray="1 7" stroke-linecap="round" stroke-width="2.4"/>
+          <circle cx="100" cy="100" r="76"/>
+          <path d="M100 24c6 6 6 12 0 16-6-4-6-10 0-16zM100 176c6-6 6-12 0-16-6 4-6 10 0 16zM24 100c6-6 12-6 16 0-4 6-10 6-16 0zM176 100c-6-6-12-6-16 0 4 6 10 6 16 0z" fill="#F3D9C9"/>
+        </g>
+      </symbol>
       <symbol id="divider" viewBox="0 0 240 20">
         <path d="M0 10h96M144 10h96" stroke="#B8893B" stroke-width="1"/>
         <path d="M120 2l8 8-8 8-8-8z" fill="none" stroke="#B8893B" stroke-width="1.2"/>
@@ -75,21 +91,19 @@
     </defs>
   </svg>
 
-  <!-- 1. Envelope intro -->
-  <div class="envelope-screen" id="envelopeScreen">
-    <p class="env-kicker">Wedding Reception</p>
-    <button class="envelope" id="envelope" type="button" aria-label="Tap to open the invitation">
-      <span class="env-back"></span>
-      <span class="env-card">
-        <span class="env-card-script">Sayon &amp; Gabrielle</span>
-        <span class="env-card-date">27 · XII · 2026</span>
+  <!-- 1. Palace-door intro -->
+  <div class="gate-screen" id="envelopeScreen">
+    <p class="gate-kicker">You are cordially invited</p>
+    <button class="gate" id="envelope" type="button" aria-label="Tap to open the doors to the invitation">
+      <span class="gate-inside">
+        <span class="gate-inside-script">Sayon &amp; Gabrielle</span>
+        <span class="gate-inside-small">Wedding Reception</span>
       </span>
-      <span class="env-pocket"></span>
-      <span class="env-frame"></span>
-      <span class="env-flap"></span>
-      <span class="seal" aria-hidden="true"><span>S&amp;G</span></span>
+      <span class="door door-l"><span class="panel"></span><span class="panel"></span><span class="ring"></span></span>
+      <span class="door door-r"><span class="panel"></span><span class="panel"></span><span class="ring"></span></span>
+      <span class="gate-medallion" aria-hidden="true"><span>S&amp;G</span></span>
     </button>
-    <p class="env-hint">Tap to open</p>
+    <p class="env-hint">Tap to open the doors</p>
   </div>
 
   <!-- Music control -->
@@ -106,28 +120,35 @@
 
     <!-- 2 + 3. Blessing & hero -->
     <section class="hero">
-      <p class="blessing" lang="bn">শুভ বিবাহ</p>
-      <p class="eyebrow">Wedding Reception<em>Bou Bhaat</em></p>
+      <p class="blessing" lang="bn">শুভ বৌভাত</p>
+      <p class="eyebrow">Wedding Reception</p>
 
-      <div class="arch-wrap">
+      <div class="names-block">
+        <svg class="alpana-bg" aria-hidden="true"><use href="#alpana"/></svg>
+        <h1 class="couple">
+          <span class="script">Sayon</span><span class="amp">&amp;</span><span class="script">Gabrielle</span>
+        </h1>
+        <p class="surname">Ghosh</p>
+      </div>
+      <p class="hero-line">invite you to an evening of celebration</p>
+
+      <div class="jharokha">
         <svg class="bell bell-l" aria-hidden="true"><use href="#bell"/></svg>
         <svg class="bell bell-r" aria-hidden="true"><use href="#bell"/></svg>
-        <div class="arch">
-          <picture>
-            <source srcset="photo1.webp" type="image/webp">
-            <img src="photo1.jpg" width="960" height="1200" alt="Sayon and Gabrielle smiling at each other in a white garden gazebo" fetchpriority="high">
-          </picture>
-        </div>
+        <picture>
+          <source srcset="photo1.webp" type="image/webp">
+          <img src="photo1.jpg" width="960" height="1200" alt="Sayon and Gabrielle smiling at each other in a white garden gazebo" fetchpriority="high">
+        </picture>
+        <svg class="jharokha-frame" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="#FBF3E4" fill-rule="evenodd" d="M0 0H400V500H0Z M20.0 500.0V200.0A49.7 49.7 0 0 1 37.8 121.9A49.7 49.7 0 0 1 87.8 59.3A49.7 49.7 0 0 1 159.9 24.5A49.7 49.7 0 0 1 240.1 24.5A49.7 49.7 0 0 1 312.2 59.3A49.7 49.7 0 0 1 362.2 121.9A49.7 49.7 0 0 1 380.0 200.0V500.0Z"/>
+          <path fill="none" stroke="#B8893B" stroke-width="2.2" d="M20.0 500.0V200.0A49.7 49.7 0 0 1 37.8 121.9A49.7 49.7 0 0 1 87.8 59.3A49.7 49.7 0 0 1 159.9 24.5A49.7 49.7 0 0 1 240.1 24.5A49.7 49.7 0 0 1 312.2 59.3A49.7 49.7 0 0 1 362.2 121.9A49.7 49.7 0 0 1 380.0 200.0V500.0"/>
+          <path fill="none" stroke="#D9B46A" stroke-width="1" d="M8 500V198A56 56 0 0 1 27 115A56 56 0 0 1 81 48A56 56 0 0 1 158 12A56 56 0 0 1 242 12A56 56 0 0 1 319 48A56 56 0 0 1 373 115A56 56 0 0 1 392 198V500"/>
+          <path d="M200 2l7 7-7 7-7-7z" fill="#E8A0A0" stroke="#B8893B"/>
+        </svg>
         <svg class="arch-lotus" aria-hidden="true"><use href="#lotus"/></svg>
       </div>
 
-      <h1 class="couple">
-        <span class="script">Sayon</span>
-        <span class="weds">weds</span>
-        <span class="script">Gabrielle</span>
-      </h1>
-      <p class="hero-date">Sunday · 27th December 2026</p>
-
+      <p class="hero-date">Sunday · 27 December 2026 · 6 PM</p>
       <a class="scroll-cue" href="#note">Scroll <span aria-hidden="true">↓</span></a>
     </section>
 
@@ -145,13 +166,42 @@
       <svg class="divider" aria-hidden="true"><use href="#divider"/></svg>
     </section>
 
-    <!-- 5. Reception card -->
+    <!-- 5. Families -->
+    <section class="families reveal">
+      <svg class="alpana-small" aria-hidden="true"><use href="#alpana"/></svg>
+      <p class="section-kicker">Two families, now one</p>
+      <div class="family-grid">
+        <div class="family">
+          <p class="role">Bride</p>
+          <p class="person script">Gabrielle Ghosh</p>
+          <p>Mrs. Dawn Shelton<br>&amp; Mr. Rod Shelton</p>
+          <p class="from">Michigan (USA)</p>
+        </div>
+        <div class="knot" aria-hidden="true">
+          <svg viewBox="0 0 60 90">
+            <path d="M6 14c10 10 20 14 24 22M54 14C44 24 34 28 30 36" fill="none" stroke="#B8893B" stroke-width="2.4" stroke-linecap="round"/>
+            <ellipse cx="30" cy="42" rx="9" ry="7" fill="#E8A0A0" stroke="#B8893B" stroke-width="1.6"/>
+            <path d="M24 48l-8 28M36 48l8 28M30 49v32" fill="none" stroke="#B8893B" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="16" cy="78" r="2.5" fill="#B5392F"/><circle cx="44" cy="78" r="2.5" fill="#B5392F"/><circle cx="30" cy="83" r="2.5" fill="#B5392F"/>
+          </svg>
+          <span>&amp;</span>
+        </div>
+        <div class="family">
+          <p class="role">Groom</p>
+          <p class="person script">Sayon Ghosh</p>
+          <p>Mrs. Saswati Ghosh<br>&amp; Mr. Tapas Kumar Ghosh</p>
+          <p class="from">Orbit North View, Flat 4D,<br>Kolkata – 700037</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Reception card -->
     <section class="event reveal">
       <div class="event-card">
         <svg class="diya diya-l" aria-hidden="true"><use href="#diya"/></svg>
         <svg class="diya diya-r" aria-hidden="true"><use href="#diya"/></svg>
         <p class="section-kicker">The Reception</p>
-        <h2>Bou Bhaat Evening</h2>
+        <h2>Bou Bhaat</h2>
 
         <div class="event-date">
           <span class="day">Sunday</span>
@@ -178,37 +228,9 @@
       </div>
     </section>
 
-    <!-- 6. Families -->
-    <section class="families reveal">
-      <p class="section-kicker">Two Families, One Celebration</p>
-      <div class="family-grid">
-        <div class="family">
-          <p class="role">Bride</p>
-          <p class="person script">Gabrielle Ghosh</p>
-          <p>Mrs. Dawn Shelton<br>&amp; Mr. Rod Shelton</p>
-          <p class="from">Michigan (USA)</p>
-        </div>
-        <div class="knot" aria-hidden="true">
-          <svg viewBox="0 0 60 90">
-            <path d="M6 14c10 10 20 14 24 22M54 14C44 24 34 28 30 36" fill="none" stroke="#B8893B" stroke-width="2.4" stroke-linecap="round"/>
-            <ellipse cx="30" cy="42" rx="9" ry="7" fill="#E8A0A0" stroke="#B8893B" stroke-width="1.6"/>
-            <path d="M24 48l-8 28M36 48l8 28M30 49v32" fill="none" stroke="#B8893B" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="16" cy="78" r="2.5" fill="#B5392F"/><circle cx="44" cy="78" r="2.5" fill="#B5392F"/><circle cx="30" cy="83" r="2.5" fill="#B5392F"/>
-          </svg>
-          <span>weds</span>
-        </div>
-        <div class="family">
-          <p class="role">Groom</p>
-          <p class="person script">Sayon Ghosh</p>
-          <p>Mrs. Saswati Ghosh<br>&amp; Mr. Tapas Kumar Ghosh</p>
-          <p class="from">Orbit North View, Flat 4D,<br>Kolkata – 700037</p>
-        </div>
-      </div>
-    </section>
-
     <!-- 7. Countdown -->
     <section class="countdown reveal" aria-live="polite">
-      <p class="section-kicker">Counting the moments</p>
+      <p class="section-kicker">Until we celebrate together</p>
       <div class="timer" id="timer">
         <div><span id="cd-d">--</span><small>Days</small></div>
         <div><span id="cd-h">--</span><small>Hours</small></div>
